@@ -9,11 +9,9 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Controller", menuName = "Input/Controller")]
 public class Controller : GameInput
 {
-    [SerializeField]
-    string portName;
+    public string portName;
 
     SerialPort serialPort;
-    int counter = 0;
 
     public override bool Initialize()
     {
@@ -50,5 +48,10 @@ public class Controller : GameInput
             /// and parses it into a boolean variable then returns it
             throw new NotImplementedException();
         }
+    }
+
+    public static string[] GetPorts()
+    {
+        return SerialPort.GetPortNames();
     }
 }

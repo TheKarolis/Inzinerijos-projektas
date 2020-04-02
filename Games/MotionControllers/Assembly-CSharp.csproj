@@ -130,20 +130,21 @@
     <Compile Include="Assets\Other\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeB.cs" />
     <Compile Include="Assets\Other\TextMesh Pro\Examples &amp; Extras\Scripts\VertexZoom.cs" />
     <Compile Include="Assets\Other\TextMesh Pro\Examples &amp; Extras\Scripts\WarpTextExample.cs" />
-    <Compile Include="Assets\Scripts\AddPlayers.cs" />
-    <Compile Include="Assets\Scripts\ConnectionManager.cs" />
     <Compile Include="Assets\Scripts\EventSystem.cs" />
     <Compile Include="Assets\Scripts\Game.cs" />
-    <Compile Include="Assets\Scripts\GameButton.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
-    <Compile Include="Assets\Scripts\InfoGameDisplay.cs" />
     <Compile Include="Assets\Scripts\Input\Controller.cs" />
     <Compile Include="Assets\Scripts\Input\GameInput.cs" />
     <Compile Include="Assets\Scripts\Input\Keyboard.cs" />
-    <Compile Include="Assets\Scripts\MenuController.cs" />
-    <Compile Include="Assets\Scripts\MyButton.cs" />
+    <Compile Include="Assets\Scripts\Menu\AddPlayers.cs" />
+    <Compile Include="Assets\Scripts\Menu\ControllerSetup.cs" />
+    <Compile Include="Assets\Scripts\Menu\GameButton.cs" />
+    <Compile Include="Assets\Scripts\Menu\InfoGameDisplay.cs" />
+    <Compile Include="Assets\Scripts\Menu\MenuController.cs" />
+    <Compile Include="Assets\Scripts\Menu\MyButton.cs" />
+    <Compile Include="Assets\Scripts\Menu\PlayerSelect.cs" />
+    <Compile Include="Assets\Scripts\Player.cs" />
     <Compile Include="Assets\Scripts\PlayerManager.cs" />
-    <Compile Include="Assets\Scripts\PlayerSelect.cs" />
     <None Include="Assets\Other\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface-Mobile.shader" />
     <None Include="Assets\Other\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
     <None Include="Assets\LeanTween\Examples\Archived\2dUnlitWithFade.shader" />
@@ -186,11 +187,17 @@
     <Reference Include="Unity.CollabProxy.Editor">
       <HintPath>D:/Projects/Unity/MotionControllers/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.Postprocessing.Editor">
+      <HintPath>D:/Projects/Unity/MotionControllers/Library/ScriptAssemblies/Unity.Postprocessing.Editor.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.Rider.Editor">
       <HintPath>D:/Projects/Unity/MotionControllers/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.Sprite.Editor">
       <HintPath>D:/Projects/Unity/MotionControllers/Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Postprocessing.Runtime">
+      <HintPath>D:/Projects/Unity/MotionControllers/Library/ScriptAssemblies/Unity.Postprocessing.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.Tilemap.Editor">
       <HintPath>D:/Projects/Unity/MotionControllers/Library/ScriptAssemblies/Unity.2D.Tilemap.Editor.dll</HintPath>
@@ -200,12 +207,6 @@
     </Reference>
     <Reference Include="UnityEditor.UI">
       <HintPath>D:/Projects/Unity/MotionControllers/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Postprocessing.Editor">
-      <HintPath>D:/Projects/Unity/MotionControllers/Library/ScriptAssemblies/Unity.Postprocessing.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Postprocessing.Runtime">
-      <HintPath>D:/Projects/Unity/MotionControllers/Library/ScriptAssemblies/Unity.Postprocessing.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>D:/Program Files/Unity/2019.2.21f1/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>

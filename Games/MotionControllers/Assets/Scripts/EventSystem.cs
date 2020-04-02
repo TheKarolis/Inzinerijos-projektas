@@ -10,15 +10,6 @@ public class EventSystem : MonoBehaviour
     {
         main = this;
     }
-
-    public event Action<Game> OnUpdateGameInfo;
-    public void UpdateGameInfo(Game game)
-    {
-        if (OnUpdateGameInfo != null)
-        {
-            OnUpdateGameInfo(game);
-        }
-    }
     public event Action<Game> OnSelectGame;
     public void SelectGame(Game game)
     {
@@ -27,4 +18,13 @@ public class EventSystem : MonoBehaviour
             OnSelectGame(game);
         }
     }
+    public event Action<int> OnCreatePlayers;
+    public void CreatePlayers(int count)
+    {
+        if (OnCreatePlayers != null)
+        {
+            OnCreatePlayers(count);
+        }
+    }
+
 }
