@@ -28,7 +28,7 @@ public class ConnectionWizard : MonoBehaviour
         }
         else
         {
-            if(!Application.isEditor || true)
+            if(!Application.isEditor)
             {
                 overlay.SetActive(true);
                 Time.timeScale = 0;

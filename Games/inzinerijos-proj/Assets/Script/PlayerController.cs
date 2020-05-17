@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -10,6 +11,8 @@ public class PlayerController : MonoBehaviour
     Rigidbody2D rb;
     Animator an;
 
+    bool dead = false;
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -18,11 +21,27 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        rb.MovePosition(transform.position+new Vector3(speed,0,0));
+        if(!dead)
+        {
+            rb.MovePosition(transform.position+new Vector3(speed,0,0));
+        }
     }
 
     private void Update()
     {
         an.SetBool("Jump", ControllerInput.jump);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        StartCoroutine(Die());
+    }
+
+    IEnumerator Die()
+    {
+        dead = true;
+        an.SetBool("Dead",true);
+        yield return new WaitForSeconds(1);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
