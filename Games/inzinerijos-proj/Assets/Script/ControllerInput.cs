@@ -19,6 +19,9 @@ public class ControllerInput : MonoBehaviour
     SerialPort jumpSensor;
     SerialPort tiltSensor;
 
+    int jumpDisconnect = 0;
+    int tiltDisconnect = 0;
+
     public bool connected
     {
         get
@@ -40,28 +43,78 @@ public class ControllerInput : MonoBehaviour
         }
     }
 
+    public Action OnDisconnect;
+
     protected virtual void Update()
     {
-        if(jumpSensor != null && jumpSensor.IsOpen && jumpSensor.BytesToRead > 0)
+        GetData();
+    }
+
+    void GetData()
+    {
+        if (!connected)
         {
-            buffer = Convert.ToString(jumpSensor.ReadChar(), 2);
-            while (buffer.Length < 8)
+            OnDisconnect?.Invoke();
+            return;
+        }
+
+
+        if (jumpSensor != null && jumpSensor.IsOpen && jumpSensor.BytesToRead > 0)
+        {
+            // Code responsible for detecting disconnect
+            if (jumpSensor.BytesToRead > 0)
             {
-                buffer = '0' + buffer;
+                jumpDisconnect = 0;
             }
-            jump = buffer[7] == '1' ? true : false;
+            else
+            {
+                jumpDisconnect++;
+            }
+
+            if(jumpDisconnect > 500)
+            {
+                jumpSensor = null;
+            }
+            //
+            else
+            {
+                buffer = Convert.ToString(jumpSensor.ReadChar(), 2);
+                while (buffer.Length < 8)
+                {
+                    buffer = '0' + buffer;
+                }
+                jump = buffer[7] == '1' ? true : false;
+            }
         }
 
         if (tiltSensor != null && tiltSensor.IsOpen && tiltSensor.BytesToRead > 0)
         {
-            buffer = Convert.ToString(tiltSensor.ReadChar(), 2);
-            while (buffer.Length < 8)
+            // Code responsible for detecting disconnect
+            if (tiltSensor.BytesToRead > 0)
             {
-                buffer = '0' + buffer;
+                tiltDisconnect = 0;
             }
-            tilt = buffer[5] == '1' ? true : false;
-            button1 = buffer[6] == '1' ? true : false;
-            button2 = buffer[7] == '1' ? true : false;
+            else
+            {
+                tiltDisconnect++;
+            }
+
+            if (tiltDisconnect > 500)
+            {
+                tiltSensor = null;
+            }
+            //
+            else
+            {
+                buffer = Convert.ToString(tiltSensor.ReadChar(), 2);
+                while (buffer.Length < 8)
+                {
+                    buffer = '0' + buffer;
+                }
+                tilt = buffer[5] == '1' ? true : false;
+                button1 = buffer[6] == '1' ? true : false;
+                button2 = buffer[7] == '1' ? true : false;
+            }
         }
     }
 

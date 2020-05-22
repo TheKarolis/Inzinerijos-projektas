@@ -44,6 +44,7 @@ public class ConnectionWizard : MonoBehaviour
 
     private void Start()
     {
+        ControllerInput.instance.OnDisconnect += EnableWizard;
     }
     void EnableWizard()
     {

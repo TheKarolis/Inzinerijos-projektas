@@ -16,14 +16,14 @@ public class PlayerController : MonoBehaviour
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
-        an = GetComponent<Animator>();
+        an = GetComponentInChildren<Animator>();
     }
 
     private void FixedUpdate()
     {
-        if(!dead)
+        if (!dead)
         {
-            rb.MovePosition(transform.position+new Vector3(speed,0,0));
+            rb.MovePosition(transform.position + new Vector3(speed, 0, 0));
         }
     }
 
