@@ -6,9 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/MainScene.unity
-    guid: 9ab3d75e8db204f4e821aedff94461ee
+    path: Assets/Scenes/MainMenu.unity
+    guid: 8c6faee27ed48254584159ccfa08d0bc
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: d1c3109bdb54ad54c8a2b2838528e640
+    path: Assets/Scenes/Pong [GAME].unity
+    guid: a534682a9305dbd468ed09cee54866b2
+  - enabled: 1
+    path: Assets/Scenes/Jumper [GAME].unity
+    guid: 9ab3d75e8db204f4e821aedff94461ee
   m_configObjects: {}
