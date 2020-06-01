@@ -61,60 +61,24 @@ public class ControllerInput : MonoBehaviour
 
         if (jumpSensor != null && jumpSensor.IsOpen && jumpSensor.BytesToRead > 0)
         {
-            // Code responsible for detecting disconnect
-            if (jumpSensor.BytesToRead > 0)
+            buffer = Convert.ToString(jumpSensor.ReadChar(), 2);
+            while (buffer.Length < 8)
             {
-                jumpDisconnect = 0;
+                buffer = '0' + buffer;
             }
-            else
-            {
-                jumpDisconnect++;
-            }
-
-            if(jumpDisconnect > 500)
-            {
-                jumpSensor = null;
-            }
-            //
-            else
-            {
-                buffer = Convert.ToString(jumpSensor.ReadChar(), 2);
-                while (buffer.Length < 8)
-                {
-                    buffer = '0' + buffer;
-                }
-                jump = buffer[7] == '1' ? true : false;
-            }
+            jump = buffer[7] == '1' ? true : false;
         }
 
         if (tiltSensor != null && tiltSensor.IsOpen && tiltSensor.BytesToRead > 0)
         {
-            // Code responsible for detecting disconnect
-            if (tiltSensor.BytesToRead > 0)
+            buffer = Convert.ToString(tiltSensor.ReadChar(), 2);
+            while (buffer.Length < 8)
             {
-                tiltDisconnect = 0;
+                buffer = '0' + buffer;
             }
-            else
-            {
-                tiltDisconnect++;
-            }
-
-            if (tiltDisconnect > 500)
-            {
-                tiltSensor = null;
-            }
-            //
-            else
-            {
-                buffer = Convert.ToString(tiltSensor.ReadChar(), 2);
-                while (buffer.Length < 8)
-                {
-                    buffer = '0' + buffer;
-                }
-                tilt = buffer[5] == '1' ? true : false;
-                button1 = buffer[6] == '1' ? true : false;
-                button2 = buffer[7] == '1' ? true : false;
-            }
+            tilt = buffer[5] == '1' ? true : false;
+            button1 = buffer[6] == '1' ? true : false;
+            button2 = buffer[7] == '1' ? true : false;
         }
     }
 
