@@ -50,6 +50,12 @@ public class ControllerInput : MonoBehaviour
         GetData();
     }
 
+    public void ResetConnections()
+    {
+        jumpSensor = null;
+        tiltSensor = null;
+    }
+
     void GetData()
     {
         if (!connected)

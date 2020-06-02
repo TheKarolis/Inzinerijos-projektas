@@ -5,8 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    public static Player editingPlayer;
-
     public static GameManager main;
     private void Awake()
     {
