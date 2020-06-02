@@ -218,9 +218,6 @@
     <Reference Include="Unity.CollabProxy.Editor">
       <HintPath>D:/Projects/inzinerijos-projektas/Games/inzinerijos-proj/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.Postprocessing.Editor">
-      <HintPath>D:/Projects/inzinerijos-projektas/Games/inzinerijos-proj/Library/ScriptAssemblies/Unity.Postprocessing.Editor.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.Rider.Editor">
       <HintPath>D:/Projects/inzinerijos-projektas/Games/inzinerijos-proj/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
     </Reference>
@@ -241,9 +238,6 @@
     </Reference>
     <Reference Include="Unity.2D.Common.Runtime">
       <HintPath>D:/Projects/inzinerijos-projektas/Games/inzinerijos-proj/Library/ScriptAssemblies/Unity.2D.Common.Runtime.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Postprocessing.Runtime">
-      <HintPath>D:/Projects/inzinerijos-projektas/Games/inzinerijos-proj/Library/ScriptAssemblies/Unity.Postprocessing.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.Animation.Editor">
       <HintPath>D:/Projects/inzinerijos-projektas/Games/inzinerijos-proj/Library/ScriptAssemblies/Unity.2D.Animation.Editor.dll</HintPath>
